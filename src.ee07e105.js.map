@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.js"],"names":["a","console","log"],"mappings":";;;AAIA,aAHA,QAAA,oBAEA,MAAMA,EAAI,EACVC,QAAQC,IADE","file":"src.ee07e105.js","sourceRoot":"../src","sourcesContent":["//Было установлено с шаблона\nimport './sass/main.scss';\n\nconst a = 1;\nconsole.log(a);\n\n"]}
