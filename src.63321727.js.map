@@ -1,1 +1,0 @@
-{"version":3,"sources":["index.js"],"names":["a","console","log"],"mappings":";AAGA,MAAMA,EAAI,EACVC,QAAQC,IADE","file":"src.63321727.js","sourceRoot":"../src","sourcesContent":["//Было установлено с шаблона\n//import './sass/main.scss';\n\nconst a = 1;\nconsole.log(a);\n\n"]}
