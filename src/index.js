@@ -27,15 +27,16 @@ function createMenuList(menu) {
     return foodCardsTmp(menu);
 };
 
-// Реализуем мозможность выбора темы
+//По умолчанию тема светлая.
+const getBody = document.querySelector('body');
+console.log(getBody);
+getBody.classList.add(Theme.LIGHT);
 
+// Реализуем мозможность выбора темы
 const selectCheckbox = document.querySelector('.theme-switch__toggle');
 console.log(selectCheckbox);
 
 //При изменении темы, необходимо добавлять на элемент body класс light-theme или dark-theme
-const getBody = document.querySelector('body');
-console.log(getBody);
-
 selectCheckbox.addEventListener('change', onSelectThemes);
 
 //Выбранная тема должна сохраняться между перезагрузками страницы. Для хранения темы используй localStorage.
