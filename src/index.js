@@ -32,12 +32,13 @@ function createMenuList(menu) {
 const selectCheckbox = document.querySelector('.theme-switch__toggle');
 console.log(selectCheckbox);
 
+//При изменении темы, необходимо добавлять на элемент body класс light-theme или dark-theme
 const getBody = document.querySelector('body');
 console.log(getBody);
 
 selectCheckbox.addEventListener('change', onSelectThemes);
 
-
+//Выбранная тема должна сохраняться между перезагрузками страницы. Для хранения темы используй localStorage.
 function onSelectThemes(event) {
     if (selectCheckbox.checked) {
         getBody.classList.remove(Theme.LIGHT);
@@ -46,13 +47,7 @@ function onSelectThemes(event) {
         console.log(darkTheme);
         
         localStorage.setItem('theme', darkTheme);
-        //console.log(localStorage.getItem('theme'));
-        if (localStorage.getItem('theme')) {
-            selectCheckbox.setAttribute('checked', 'true');
-        }
-       
-        //save();
-       
+        console.log(localStorage.getItem('theme'));
     }
     else {
         getBody.classList.remove(Theme.DARK);
@@ -60,19 +55,19 @@ function onSelectThemes(event) {
         const lightTheme = getBody.getAttribute('class');
         console.log(lightTheme);
         localStorage.setItem('theme', lightTheme);
-        
     }
 
 }
-// function saveCheckboxstatus() {
-    
-        
-// }
 
-// function save(){
-    
-//     if(selectCheckbox.checked) {
-//         localStorage.setItem('checkbox1zaal1', true);
-//     }
-// }
-//localStorage.removeItem('checkbox1zaal1');
+//Если при загрузке страницы тема тёмная, не забудь поставить свойство checked у чекбокса #theme-switch-toggle в true, чтобы ползунок сдвинулся в правильное положение.
+const getSwitchЬarker = document.querySelector('.theme-switch__marker');
+console.log(getSwitchЬarker);
+
+if (localStorage.getItem('theme') === 'dark-theme') {
+    selectCheckbox.setAttribute('checked', 'true');
+    getBody.classList.remove(Theme.LIGHT);
+    getBody.classList.add(Theme.DARK);
+
+    getSwitchЬarker.style.transition = 'none';
+}
+
